@@ -1,0 +1,31 @@
+# Template file for 'python3-onnxruntime'
+pkgname=python3-onnxruntime
+version=1.23.2
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+build_style=python3-module
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="python3-setuptools python3-packaging"
+depends="python3-coloredlogs flatbuffers python3-packaging python3-numpy python3-protobuf python3-sympy"
+short_desc="A cross-platform Machine Learning inferencing and training accelerator"
+maintainer="Soulful Sailer <soulful.sailer@entropic.pro>"
+license="MIT"
+homepage="https://onnxruntime.ai/"
+#changelog=""
+distfiles="https://github.com/microsoft/onnxruntime/archive/refs/tags/v${version}.tar.gz"
+checksum=99bcf964ce4e869d823c99b2294562a9050cbfa8e76ec81c8683cb3c7e19c2b4
+
+post_install() {
+	vlicense LICENSE
+
+	vdoc README.md
+	for _file in docs/*.md
+	do
+		vdoc "$_file"
+	done
+}
