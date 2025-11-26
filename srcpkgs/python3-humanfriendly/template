@@ -1,0 +1,27 @@
+# Template file for 'python3-humanfriendly'
+pkgname=python3-humanfriendly
+version=10.0
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+build_style=python3-module
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="python3-setuptools"
+checkdepends="python3-flake8"
+depends="python3"
+short_desc="Human friendly input/output for text interfaces using Python"
+maintainer="Soulful Sailer <soulful.sailer@entropic.pro>"
+license="MIT"
+homepage="https://humanfriendly.readthedocs.org/"
+#changelog=""
+distfiles="https://github.com/xolox/python-humanfriendly/archive/refs/tags/${version}.tar.gz"
+checksum=a7f6ee6aa93933ffdf716a44163a8b1d17e8c95b3badb25efa37d562b2b93393
+
+post_install() {
+	vlicense LICENSE.txt
+	vdoc README.rst
+}
