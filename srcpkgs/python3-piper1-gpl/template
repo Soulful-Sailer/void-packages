@@ -1,0 +1,26 @@
+# Template file for 'python3-piper1-gpl'
+pkgname=python3-piper1-gpl
+version=1.3.0
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+build_style=python3-module
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+hostmakedepends="cmake ninja"
+depends="python3-onnxruntime"
+short_desc="Fast and local neural text-to-speech engine "
+maintainer="Soulful Sailer <soulful.sailer@entropic.pro>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/OHF-Voice/piper1-gpl"
+distfiles="https://github.com/OHF-Voice/piper1-gpl/archive/refs/tags/v${version}.tar.gz"
+checksum=b27e318dcbbab8563187da0ef00d443e51f4f6462782befbed54c42539aa41ec
+
+post_install() {
+	vdoc README.md
+	for _file in docs/*.md
+	do
+		vdoc "$_file"
+	done
+}
