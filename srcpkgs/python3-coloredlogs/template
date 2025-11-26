@@ -1,0 +1,27 @@
+# Template file for 'python3-coloredlogs'
+pkgname=python3-coloredlogs
+version=15.0.1
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+build_style=python3-module
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="python3-setuptools"
+checkdepends="python3-flake8"
+depends="python3-humanfriendly"
+short_desc="Colored terminal output for Python's logging module"
+maintainer="Soulful Sailer <soulful.sailer@entropic.pro>"
+license="MIT"
+homepage="https://coloredlogs.readthedocs.io/"
+#changelog=""
+distfiles="https://github.com/xolox/python-coloredlogs/archive/refs/tags/${version}.tar.gz"
+checksum=e8161222671bb129f7936cd220c275a3cbc0a6c22313bd4483114b9526e5695f
+
+post_install() {
+	vlicense LICENSE.txt
+	vdoc README.rst
+}
