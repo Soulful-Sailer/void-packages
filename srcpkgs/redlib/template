@@ -1,0 +1,16 @@
+# Template file for 'redlib'
+pkgname=redlib
+version=0.36.0
+revision=1
+build_style=cargo
+short_desc="Private web front-end for Reddit"
+maintainer="Soulful Sailer <soulful.sailer@entropic.pro>"
+license="AGPL-3.0-only"
+homepage="https://github.com/redlib-org/redlib"
+distfiles="https://github.com/redlib-org/redlib/archive/refs/tags/v${version}.tar.gz"
+checksum=e10bcd357be07d4eea93c2e199c7a0a1fe7eb82b543f0ca3c24d3f698abf519d
+
+post_install() {
+	vsv redlib
+	vlicense LICENSE
+}
