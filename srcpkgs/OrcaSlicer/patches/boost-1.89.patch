@@ -1,0 +1,5 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -490,1 +490,1 @@
+-find_package(Boost 1.83.0 REQUIRED COMPONENTS system filesystem thread log log_setup locale regex chrono atomic date_time iostreams program_options nowide)
++find_package(Boost 1.83.0 REQUIRED COMPONENTS filesystem thread log log_setup locale regex chrono atomic date_time iostreams program_options nowide)
