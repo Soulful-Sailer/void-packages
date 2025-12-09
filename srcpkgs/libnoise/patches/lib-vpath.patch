@@ -1,0 +1,8 @@
+--- a/lib/Makefile
++++ +++ b/lib/Makefile
+@@ -1,4 +1,4 @@
+-VPATH=../src/
++VPATH=src:../src/
+
+ .PHONY: all clean
+ all: libnoise.a libnoise.la libnoise.so.0.3

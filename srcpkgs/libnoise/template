@@ -1,0 +1,54 @@
+# Template file for 'libnoise'
+pkgname=libnoise
+version=1.0.0
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+build_style=gnu-makefile
+#configure_args=""
+#make_build_args=""
+#make_build_target="all"
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="make libtool"
+patch_args="--verbose -l"
+#makedepends=""
+short_desc="noise-generating library for C++"
+maintainer="Soulful Sailer <soulful.sailer@entropic.pro>"
+license="LGPL-2.1-only"
+homepage="https://libnoise.sourceforge.net/index.html"
+distfiles="https://sourceforge.net/projects/libnoise/files/libnoise%20sources/${version}/libnoisesrc-${version}.zip"
+checksum=34ed402f43f30ce5e39812642c9533c11082cd2bc092341c65160f5c743be95b
+
+CFLAGS="-O3 -fomit-frame-pointer"
+
+
+
+post_extract() {
+	mv noise/* .
+}
+
+pre_patch() {
+	cat lib/Makefile
+}
+
+do_install() {
+	ls include
+	ls lib
+	vmkdir usr/include/noise
+
+	vcopy include/* usr/include/noise/*
+	vcopy lib/* usr/lib/*
+}
+
+#post_install() {
+#
+#}
+
+libnoise-devel_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib
+	}
+}
