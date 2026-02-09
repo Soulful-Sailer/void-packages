@@ -1,0 +1,17 @@
+# Template file for 'niri-sidebar'
+pkgname=niri-sidebar
+version=0.1.1
+revision=1
+build_style=cargo
+hostmakedepends="cargo"
+depends="niri"
+short_desc="External sidebar manager for the Niri window manager"
+maintainer="Soulful Sailer <soulful.sailer@entropic.pro>"
+license="MIT"
+homepage="https://github.com/Vigintillionn/niri-sidebar"
+distfiles="https://github.com/Vigintillionn/niri-sidebar/archive/refs/tags/v${version}.tar.gz"
+checksum=7c540219e8fef6852758bd335a752faa0937e37b3ef4bb294808f99695e89a42
+
+post_install() {
+	vlicense LICENSE
+}
