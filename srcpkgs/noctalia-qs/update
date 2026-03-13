@@ -1,0 +1,2 @@
+site="https://github.com/noctalia-dev/noctalia-qs/tags/"
+pattern="(?<!tags/)v?\K[0-9.]+(?=\.tar\.gz)"
