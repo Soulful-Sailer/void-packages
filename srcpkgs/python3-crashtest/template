@@ -1,0 +1,18 @@
+# Template file for 'python3-crashtest'
+pkgname=python3-crashtest
+version=0.4.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-build python3-installer python3-poetry-core python3-wheel python3-wheel"
+depends="python3"
+checkdepends="python3-pytest"
+short_desc="Manage Python errors"
+maintainer="Soulful Sailer <soulful.sailer@entropic.pro>"
+license="MIT"
+homepage="https://github.com/python-poetry/crashtest"
+distfiles="https://github.com/python-poetry/crashtest/archive/refs/tags/${version}.tar.gz"
+checksum=eb5201f11fdbb6387e8ed694c013bfde6bf3add5168e675f8a57e5748592b2f3
+
+post_install() {
+	vlicense LICENSE
+}
